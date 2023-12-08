@@ -91,9 +91,9 @@ class BOWLanguageModel(object):
     @classmethod
     def train_from_dump(cls, filename):
         """
-        Trains a bag of words language model from either a .txt
-        file (in which case it is read as plain text) or a .json.bz2
-        file (in which case it is read as a wikidata dump).
+        Trains a bag of words language model from 
+        either a .txt file (in which case it is read as plain text)
+        or a .json.bz2 file (in which case it is read as a wikidata dump).
         """
         bow = BOWLanguageModel()
         if filename.endswith('.txt'):
@@ -107,6 +107,7 @@ class BOWLanguageModel(object):
                     if idx % 10000 == 0:
                         print(idx)
 
+                    # partie relative à l'anglais !!!
                     enlabel = item.get('labels', {}).get('en', {}).get('value')
                     endesc = item.get('descriptions', {}).get('en', {}).get('value')
                     if enlabel:
