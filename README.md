@@ -14,4 +14,29 @@ A [NIF endpoint](https://github.com/dice-group/gerbil/wiki/How-to-create-a-NIF-b
 See [the docs](https://opentapioca.readthedocs.io/en/latest/) for more information about how it works and how to run it. See [the paper](https://arxiv.org/abs/1904.09131) for some more motivation about the design of the system.
 
 OpenTapioca is released under the Apache-2.0 license.
+--------------------------------------
+
+When working in a virtual environment, it's common to have your Python dependencies and project-specific files contained within that virtual environment. To save your work and be able to continue it later, you have a few options:
+Option 1: Saving the Entire Virtual Environment
+
+    Freeze Requirements:
+        While your virtual environment is active, you can freeze the installed Python packages to a requirements.txt file. Run the following command in your virtual environment:
+
+        bash
+
+    pip freeze > requirements.txt
+
+Save the Entire Virtual Environment:
+
+    Copy the entire virtual environment folder to a safe location. This includes the venv directory (or whatever you named it).
+
+Restore the Virtual Environment:
+
+    To continue your work later, you can create a new virtual environment and install the dependencies using the requirements.txt file:
+
+    bash
+
+python -m venv venv
+venv\Scripts\activate  # Activate the virtual environment
+pip install -r requirements.txt
 

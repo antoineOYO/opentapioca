@@ -18,13 +18,15 @@ def tokenize(phrase):
     ]
     return [w for w in words if w]
 
+# Class definition for the Bag of Words (BOW) Language Model
 class BOWLanguageModel(object):
+    # Constructor to initialize the language model parameters
     def __init__(self):
         self.total_count = 0
-        self.word_count = defaultdict(int)
+        self.word_count = defaultdict(int) #dict with integers
         self.smoothing = 1
-        self.log_quotient = None
-        self.threshold = 2
+        self.log_quotient = None # interveins in the laplace smoothing
+        self.threshold = 2 # words with count(words) < 2 won't be saved in the closed vocabulary !! 
 
     def ingest(self, words):
         """

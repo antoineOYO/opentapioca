@@ -1,14 +1,19 @@
-
+# Class definition for WikidataItemDocument
 class WikidataItemDocument(object):
+    # Constructor to initialize the object with a JSON representation
     def __init__(self, json):
+        # Store the JSON representation as an instance variable
         self.json = json
 
+    # Method to retrieve a field from the JSON representation with an optional default value
     def get(self, field, default_value=None):
         return self.json.get(field, default_value)
-    
+
+    # String representation of the object, including the item's ID or indicating unknown if not present
     def __repr__(self):
         return '<WikidataItemDocument {}>'.format(self.json.get('id') or '(unknown qid)')
 
+    # Iterator method allowing iteration over the underlying JSON object
     def __iter__(self):
         return self.json.__iter__()
 
@@ -66,6 +71,8 @@ class WikidataItemDocument(object):
         valid_type_qids = [ qid for qid in type_qids if qid ]
         return valid_type_qids
 
+    ##################################
+    ################################## LANGUAGE SPECIFIC
     def get_default_label(self, language):
         """
         English label if provided, otherwise any other label
