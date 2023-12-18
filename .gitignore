@@ -9,3 +9,12 @@ opentapioca.egg-info/
 .settings/
 configsets/_default/
 settings.py
+data/best_classifier_so_far.pkl
+data/latest-all.bow.pkl
+data/latest-all.json.bz2
+data/latest-all.unsorted.tsv
+data/latest_classifier.pkl
+data/wikidata_graph.npz
+data/rss_istex_classifier.pkl
+data/wikidata_graph.pgrank.npy
+data/wikidata_graph.tsv
